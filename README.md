@@ -1,33 +1,4 @@
 # Pre trained model comparison for text generation using topsis
-```mermaid
-graph TD;
-  style Start fill:#86c7e0,stroke:#4d7ea8,stroke-width:2px,stroke-dasharray: 5, 5;
-  style LoadData fill:#99c2e1,stroke:#4d7ea8,stroke-width:2px,stroke-dasharray: 5, 5;
-  style PreprocessData fill:#aad3e4,stroke:#4d7ea8,stroke-width:2px,stroke-dasharray: 5, 5;
-  style ChooseMetrics fill:#bbe4f7,stroke:#4d7ea8,stroke-width:2px,stroke-dasharray: 5, 5;
-  style ApplyTOPSIS fill:#aad3e4,stroke:#4d7ea8,stroke-width:2px,stroke-dasharray: 5, 5;
-  style RankModels fill:#99c2e1,stroke:#4d7ea8,stroke-width:2px,stroke-dasharray: 5, 5;
-  style GenerateTable fill:#86c7e0,stroke:#4d7ea8,stroke-width:2px,stroke-dasharray: 5, 5;
-  style GenerateChart fill:#99c2e1,stroke:#4d7ea8,stroke-width:2px,stroke-dasharray: 5, 5;
-  style End fill:#86c7e0,stroke:#4d7ea8,stroke-width:2px,stroke-dasharray: 5, 5;
-
-  subgraph A[Project Steps]
-    Start -->|Start| LoadData;
-    LoadData -->|Load the dataset| PreprocessData;
-    PreprocessData -->|Clean and format data| ChooseMetrics;
-    ChooseMetrics -->|Select evaluation metrics| ApplyTOPSIS;
-    ApplyTOPSIS -->|Use TOPSIS method| RankModels;
-    RankModels -->|Generate rankings| GenerateTable;
-    GenerateTable -->|Create ranked table| GenerateChart;
-    GenerateChart -->|Visualize with a bar chart| End;
-  end
-
-  subgraph " "
-    ChooseMetrics -->|Consider BLEU, model size, inference time, fact-checking score| ApplyTOPSIS;
-    GenerateTable -->|Include normalized TOPSIS scores and rankings| GenerateChart;
-  end
-
-```
 
 ## Overview
 Text generation is a process where an AI system produces written content, imitating human language patterns and styles. The process involves generating coherent and meaningful text that resembles natural human communication.This project focuses on comparing the performance of various text generation models to help users choose the most suitable model for their specific needs.
